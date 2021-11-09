@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Score extends Model {}
+class Score extends Model { }
 
 Score.init(
     {
@@ -11,11 +11,12 @@ Score.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        // * Score out of 100% so 1.00 is 100% use decimal easier for percentage
         points: {
-            // * Score out of 100% so 1.00 is 100%
             type: DataTypes.DECIMAL(10, 2),
             allowNull: false,
         },
+        // * Date the user got this score
         date_created: {
             type: DataTypes.DATE,
             allowNull: false,
