@@ -13,6 +13,9 @@
     },
     "author": "",
     "license": "MIT",
+    "devDependencies": {
+        "nodemon": "^2.0.3"
+    },
     "bugs": {
         "url": "https://github.com/ChonaC/Project-2-MUSICTRIVIA/issues"
     },
