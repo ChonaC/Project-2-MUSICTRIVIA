@@ -5,7 +5,8 @@
     "main": "server.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node server.js"
+        "start": "node server.js",
+        "watch": "nodemon server.js"
     },
     "repository": {
         "type": "git",
@@ -14,7 +15,10 @@
     "author": "",
     "license": "MIT",
     "devDependencies": {
-        "nodemon": "^2.0.3"
+        "eslint": "^7.12.1",
+        "eslint-config-prettier": "^6.15.0",
+        "nodemon": "^2.0.3",
+        "prettier": "^2.1.2"
     },
     "bugs": {
         "url": "https://github.com/ChonaC/Project-2-MUSICTRIVIA/issues"
@@ -25,6 +29,7 @@
         "connect-session-sequelize": "^7.1.2",
         "dotenv": "^10.0.0",
         "express": "^4.17.1",
+        "express-handlebars": "^5.3.4",
         "express-session": "^1.17.2",
         "mysql2": "^2.3.3-rc.0",
         "sequelize": "^6.9.0"
