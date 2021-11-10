@@ -38,6 +38,30 @@ function printHighscores() {
   }
 }
 
+var allSongs = fetch('http://localhost:3001/api/songs', {
+  method: 'Get',
+})
+.then(response => response.json())
+.then(data => {
+  console.log('Success:', data);
+})
+.catch((error) => {
+  console.error('Error:', error);
+});
+
+var numinput = 1;
+var allSongs = fetch('http://localhost:3001/api/songs/' + numinput, {
+  method: 'Get',
+})
+.then(response => response.json())
+.then(data => {
+  console.log('Success:', data);
+})
+.catch((error) => {
+  console.error('Error:', error);
+});
+
+
 // clear functionality
 function clearHighscores() {
   window.localStorage.removeItem("highscores");
