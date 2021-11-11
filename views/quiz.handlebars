@@ -1,0 +1,31 @@
+<div class="wrapper">
+    <div id="start-screen" class="start">
+        <p>Guess the name of each song.</p>
+        <form>
+            <div class="form-row align-items-center justify-content-center">
+                <select class="custom-select" id="quiz-length">
+                    <option selected value="3">3 Songs</option>
+                    <option value="5">5 Songs</option>
+                    <option value="10">10 Songs</option>
+                </select>
+                <button type="submit" id="start" class="btn btn-primary">Start Quiz</button>
+            </div>
+        </form>
+    </div>
+    <!-- hidden when first loaded -->
+    <div id="questions" class="hide">
+        <h2 id="question-title">
+            <div class="skeleton skeleton-lyric"></div>
+            <div class="skeleton skeleton-lyric"></div>
+            <div class="skeleton skeleton-lyric"></div>
+            <div class="skeleton skeleton-lyric"></div>
+        </h2>
+        <div id="choices" class="choices">
+            <div class="skeleton skeleton-button"></div>
+            <div class="skeleton skeleton-button"></div>
+            <div class="skeleton skeleton-button"></div>
+            <div class="skeleton skeleton-button"></div>
+            <div class="skeleton skeleton-button"></div>
+        </div>
+    </div>
+</div>
