@@ -5,39 +5,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Music trivia</title>
-  <link rel="stylesheet" href="/css/jass.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <!-- Links -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../public/css/style.css" />
 </head>
 
-<body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <a href="/">Music trivia</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
+  <body>
+    <div class="scores"><a class="text-white" href="HighscorePage.html">View Highscores</a></div>
+    <div class="flex-column justify-space-around">
+      <header class="display-flex justify-space-between align-center p-2">
+        <h1>
+          <a href="/">Music trivia</a>
+        </h1>
+        <nav>
+          <!-- Conditionally render login or logout links -->
+          {{#if logged_in}}
+          <a href="/profile">profile</a> |
+          <button class="no-button" id="logout">logout</button>
+          {{else}}
+          <a href="/login">login</a>
+          {{/if}}
+        </nav>
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
+        <div class="progress" id="quiz-progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark" id="quiz-bar"
+            role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
         {{/if}}
-      </nav>
-    </header>
-    <main class="container container-fluid mt-5">
-      
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
-  </div>
+      </header>
+      <main class="container container-fluid mt-5">
+        
+        {{{ body }}}
+      </main>
+      <footer>
+        
+      </footer>
+    </div>
 
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-</body>
+    <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+    <script src="../../public/js/quiz.js"></script>
+    <script src="/js/logout.js"></script>
+    {{/if}}
+
+  </body>
 
 </html>
