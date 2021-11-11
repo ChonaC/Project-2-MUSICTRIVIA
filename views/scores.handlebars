@@ -1,0 +1,11 @@
+<table>
+    <tr>
+        <th>Rank</th>
+        <th>Name</th>
+        <th>Score</th>
+    </tr>
+    {{#each scores as |score|}}
+    {{!-- {{@index}} : {{this}} --}}
+    {{> scores-details}}
+    {{/each}}
+</table>
