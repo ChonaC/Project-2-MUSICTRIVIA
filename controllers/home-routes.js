@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../models");
+const { User, Score } = require("../models");
 const withAuth = require("../utils/auth");
 
 // Use withAuth middleware to prevent access to route
@@ -30,6 +30,26 @@ router.get("/login", (req, res) => {
     }
 
     res.render("login");
+});
+
+// * Leaderboard page
+// TODO: add auth when login works
+router.get("/scores", async (req, res) => {
+    try {
+        const scoreData = await Score.findAll({
+            // The names of the users from the User model
+            include: [{ model: User }],
+            // Highest points at the top of the board
+            order: [["points", "DESC"]],
+        });
+        const scores = scoreData.map((score) => score.get({ plain: true }));
+
+        res.render("scores", {
+            scores,
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
 
 module.exports = router;
