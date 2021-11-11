@@ -13,4 +13,13 @@ module.exports = {
     format_date: (date) => {
         return date.toLocaleDateString("en-US");
     },
+
+    // *
+    video_link: (video_id) => {
+        return "https://www.youtube.com/watch/" + video_id;
+    },
+
+    video_image: (video_id) => {
+        return "https://img.youtube.com/vi/" + video_id + "/hqdefault.jpg";
+    },
 };
