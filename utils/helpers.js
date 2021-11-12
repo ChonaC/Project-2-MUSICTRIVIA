@@ -14,12 +14,17 @@ module.exports = {
         return date.toLocaleDateString("en-US");
     },
 
-    // *
+    // ! Not needed anymore
     video_link: (video_id) => {
         return "https://www.youtube.com/watch/" + video_id;
     },
-
+    // ! Not needed anymore
     video_image: (video_id) => {
         return "https://img.youtube.com/vi/" + video_id + "/hqdefault.jpg";
+    },
+
+    // * Returns the link for the embed video
+    video_embed: (video_id) => {
+        return "https://www.youtube.com/embed/" + video_id + "?rel=0";
     },
 };
