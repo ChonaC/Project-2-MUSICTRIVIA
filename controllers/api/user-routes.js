@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
     try {
         const userData = await User.create(req.body);
-        console.log(req.body);
+        //console.log(req.body);
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;

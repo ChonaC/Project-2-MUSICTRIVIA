@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Score } = require("../models");
+const { User, Score, Song } = require("../models");
 const withAuth = require("../utils/auth");
 
 // Use withAuth middleware to prevent access to route
@@ -46,6 +46,26 @@ router.get("/scores", async (req, res) => {
 
         res.render("scores", {
             scores,
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+// * Songs page
+// TODO: add auth when login works and where user_id == session
+router.get("/songs", async (req, res) => {
+    try {
+        const songData = await Song.findAll({
+            // ! Add when finish testing
+            // where: {
+            //     user_id: req.session.user_id,
+            // },
+        });
+        const songs = songData.map((song) => song.get({ plain: true }));
+
+        res.render("songs", {
+            songs,
         });
     } catch (err) {
         res.status(500).json(err);

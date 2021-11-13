@@ -13,14 +13,14 @@ const PORT = process.env.PORT || 3001;
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
 const sess = {
-    secret: process.env.JAWSDB_SESSION_SECRET, // changing it back to process.env.JAWSDB_SESSION_SECRET add this variable to your .env to work locally
-    cookie: {},
-    resave: false,
-    saveUninitialized: true,
-    store: new SequelizeStore({
-        db: sequelize,
-    }),
-};
+
+    secret:'process.env.JAWSDB_SESSION_SECRET',
+    cookie: {
+        path: '/', 
+        httpOnly: true, 
+        secure: false, 
+        maxAge: null
+    },
 
 app.use(session(sess));
 app.use(express.static(path.join(__dirname, "public")));
