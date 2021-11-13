@@ -17,7 +17,7 @@ Song.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        song_url: {
+        video_id: {
             type: DataTypes.STRING,
             allowNull: false,
         },
