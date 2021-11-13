@@ -14,10 +14,13 @@ const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({ helpers });
 const sess = {
 
-    secret:'Super secret secret',
-    //process.env.JAWSDB_SESSION_SECRET
-    
-    cookie: {},
+    secret:'process.env.JAWSDB_SESSION_SECRET',
+    cookie: {
+        path: '/', 
+        httpOnly: true, 
+        secure: false, 
+        maxAge: null
+    },
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
