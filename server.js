@@ -13,7 +13,10 @@ const PORT = process.env.PORT || 3001;
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
 const sess = {
-    secret: "Super secret secret", // ! changed it from process.env.JAWSDB_SESSION_SECRET to work locally
+
+    secret:'Super secret secret',
+    //process.env.JAWSDB_SESSION_SECRET
+    
     cookie: {},
     resave: false,
     saveUninitialized: true,
