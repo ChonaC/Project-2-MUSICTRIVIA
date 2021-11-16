@@ -21,6 +21,8 @@ var quizAnswers = [];
 var generatedResults = [];
 var answer = "";
 
+const theme = new Audio("./sounds/theme.mp3");
+// C:\Users\Tim\Documents\Bootcamp\Project-2-MUSICTRIVIA\Assets\sounds\theme.mp3
 // default length of 3
 var quizLength = 3;
 console.log(submitBtn, startBtn)
@@ -152,12 +154,23 @@ function randomize(length) {
   return Math.floor(Math.random() * (length - 1));
 }
 
+function playTheme() {
+  theme.play();
+  theme.volume = 0.25;
+}
+
+function stopTheme() {
+  theme.pause();
+  theme.currentTime = 0;
+}
+
 // quiz variables
 var currentQuestionIndex = 0;
 var finalScore = 0;
 
 function startQuiz(e) {
   e.preventDefault();
+  playTheme();
 
   quizLength = quizLengthEl.value;
   // hides the start screen
@@ -197,6 +210,7 @@ function questionClick() {
   // end after last question else move to next question
   if (currentQuestionIndex >= quizLength) {
     quizEnd();
+    stopTheme();
   } else {
     getArtist();
   }
