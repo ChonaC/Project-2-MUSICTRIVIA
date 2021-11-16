@@ -18,7 +18,6 @@
 * With the new and improved Music Trivia 2.0, the user can now create an account. 
 * The registered owner can login and logout.
 * Once logged in, the registered owner can now look at past highscores of trivias that were taken. 
-* The registered owner can also view all the past questions that were answered. 
 * The registered owner can lastly search for music videos that are related to the questions that were answered. 
 * The registered owner will also hear the Jeopardy Theme Song whilst playing the game.
 * Newer website layout and added company logo. 
@@ -28,7 +27,11 @@
 
 ## Deployed Application:
 
+* [Link to PowerPoint](https://docs.google.com/presentation/d/1jvwyjJ7dpNLHpVdG6tJ2kyWzcPCzsuZHTdhw_rvaAGw/edit?usp=sharing)
+
+* [Link to GitHub](https://github.com/ChonaC/Project-2-MUSICTRIVIA)
+
+* [Link to deployed Application]()
 
 ## Music Trivia Logo:
-
 [![music-trivia-logo.png](https://i.postimg.cc/SQMSzcHD/music-trivia-logo.png)](https://postimg.cc/WtsLBqNk)
