@@ -20,7 +20,7 @@ const theme = new Audio("./sounds/theme.mp3");
 // C:\Users\Tim\Documents\Bootcamp\Project-2-MUSICTRIVIA\Assets\sounds\theme.mp3
 // default length of 3
 var quizLength = 3;
-console.log(submitBtn, startBtn)
+
 function artistResults(json) {
     console.log(json);
     var titleEl = document.getElementById("question-title");
