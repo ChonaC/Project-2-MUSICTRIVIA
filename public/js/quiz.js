@@ -16,6 +16,8 @@ var quizAnswers = [];
 var generatedResults = [];
 var answer = "";
 
+const theme = new Audio("./sounds/theme.mp3");
+// C:\Users\Tim\Documents\Bootcamp\Project-2-MUSICTRIVIA\Assets\sounds\theme.mp3
 // default length of 3
 var quizLength = 3;
 
@@ -173,12 +175,24 @@ function randomize(length) {
     return Math.floor(Math.random() * (length - 1));
 }
 
+function playTheme() {
+  theme.play();
+  theme.volume = 0.25;
+}
+
+function stopTheme() {
+  theme.pause();
+  theme.currentTime = 0;
+}
+
 // quiz variables
 var currentQuestionIndex = 0;
 var finalScore = 0;
 
 function startQuiz(e) {
-    e.preventDefault();
+
+  e.preventDefault();
+  playTheme();
 
     quizLength = quizLengthEl.value;
     // hides the start screen
@@ -188,6 +202,36 @@ function startQuiz(e) {
     // reveals the questions
     questionsEl.classList.remove("hide");
 
+
+function questionClick() {
+  // check if answer is correct
+  if (this.value !== answer) {
+    feedbackEl.textContent = "Incorrect";
+  }
+  else {
+    feedbackEl.textContent = "Correct";
+    finalScore++;
+  }
+
+  quizAnswers.push(answer)
+
+  // feedback on if the answer was right or wrong
+  feedbackEl.setAttribute("class", "feedback");
+  setTimeout(function () {
+    feedbackEl.setAttribute("class", "feedback hide");
+  }, 2000);
+
+  currentQuestionIndex++;
+
+  let progress = (currentQuestionIndex / quizLength).toFixed(2) * 100;
+  quizProgressBarEl.style.width = progress + "%";
+  quizProgressBarEl.setAttribute("aria-valuenow", progress)
+
+  // end after last question else move to next question
+  if (currentQuestionIndex >= quizLength) {
+    quizEnd();
+    stopTheme();
+  } else {
     getArtist();
 }
 
