@@ -23,11 +23,11 @@
 
 -   Daliya Benny: Login and authentication with express-session and cookies.
 
--   Jimmy Zheng: Help out other teammates.
+-   Jimmy Zheng: Work on handlebars, API routes, and styling. Help others.
 
--   Taylor Paddock: CSS and Handlebars.
+-   Taylor Paddock: Help with and move JS, CSS, and HTML files into MVC format, help others when needed. Create logo.
 
--   Tim Renken: Find and implement extra library, package, or technology.
+-   Tim Renken: Find and implement extra library, package, or technology. Heroku deployment
 
 ## Description
 
@@ -157,19 +157,25 @@ After all required modules are installed should be able to run the program. It w
 
 ## Questions
 
-For questions you can reach us at
+For questions you can reach us on GitHub at
 
--   https://github.com/BCole37
--   https://github.com/ByteSizeError
--   https://github.com/daliyaebenny
--   https://github.com/ChonaC
--   https://github.com/quiptobasco
--   https://github.com/taylorpaddock
+-   [BCole37][github-bryson]
+-   [ByteSizeError][github-jimmy]
+-   [daliyaebenny][github-daliya]
+-   [ChonaC][github-chona]
+-   [quiptobasco][github-tim]
+-   [taylorpaddock][github-taylor]
 
 [deployed-link]: https://protected-falls-91774.herokuapp.com/
 [faq]: https://www.contributor-covenant.org/faq
 [github-link]: https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository
 [github-repo]: https://github.com/ChonaC/Project-2-MUSICTRIVIA
+[github-bryson]: https://github.com/BCole37
+[github-chona]: https://github.com/ChonaC
+[github-daliya]: https://github.com/daliyaebenny
+[github-jimmy]: https://github.com/ByteSizeError
+[github-taylor]: https://github.com/taylorpaddock
+[github-tim]: https://github.com/quiptobasco
 [homepage]: https://www.contributor-covenant.org
 [mozilla coc]: https://github.com/mozilla/diversity
 [music-trivia-logo]: https://i.postimg.cc/SQMSzcHD/music-trivia-logo.png
