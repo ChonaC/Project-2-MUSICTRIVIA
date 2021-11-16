@@ -4,8 +4,8 @@ const homeRoutes = require("./home-routes");
 
 router.use("/", homeRoutes);
 router.use("/music-trivia-api", apiRoutes);
-router.use((req, res) => {
-    res.send("<h1>Wrong Route!</h1>");
-});
+// router.use((req, res) => {
+//     res.send("<h1>Wrong Route!</h1>");
+// });
 
 module.exports = router;
