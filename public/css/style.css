@@ -1,28 +1,28 @@
-  /*sets global font */
-  body {
-    font-family: 'Open Sans', sans-serif;
-  }
+/*sets global font */
+body {
+    font-family: "Open Sans", sans-serif;
+}
 
-  #question-title {
+#question-title {
     white-space: pre-wrap;
     text-align: center;
-  }
+}
 
-  .wrapper {
+.wrapper {
     margin: 100px auto 0 auto;
     max-width: 600px;
-  }
-  
-    /* allows things to be hidden at certian times such as questions on first loading */
-  .hide {
+}
+
+/* allows things to be hidden at certian times such as questions on first loading */
+.hide {
     display: none;
-  }
-  
-  .start {
+}
+
+.start {
     text-align: center;
-  }
-  
-  .jumbotron {
+}
+
+.jumbotron {
     text-align: center;
     background-color: transparent;
     background-color: dodgerblue;
@@ -30,45 +30,45 @@
     border-radius: 0;
     border-bottom: 10px solid black;
     min-height: 150px;
-  }
+}
 
-  .scores {
+.scores {
     position: absolute;
     color: darkred;
     top: 10px;
     left: 10px;
-  }
-  
-    /* timer in top right */
+}
 
-  .timer {
+/* timer in top right */
+
+.timer {
     position: absolute;
     top: 10px;
     right: 10px;
-  }
-  
-  a {
+}
+
+/* a {
     color: black;
     text-decoration: none;
     transition: color 0.1s;
-  }
-  
-  /* interaction change color on hover */
-  a:hover {
+} */
+
+/* interaction change color on hover */
+/* a:hover {
     color: blue;
-  }
-  
-  /* right or wrong feedback*/
-  .feedback {
+  } */
+
+/* right or wrong feedback*/
+.feedback {
     font-size: 130%;
     margin-top: 20px;
     padding-top: 10px;
     color: gray;
     border-top: 2px solid grey;
-  }
+}
 
-  /* button settings */
-  button {
+/* button settings */
+button {
     display: inline-block;
     margin: 5px;
     cursor: pointer;
@@ -77,96 +77,94 @@
     border-radius: 5px;
     padding: 3px 15px;
     color: white;
-  }
-  
-  button:hover {
+}
+
+/* button:hover {
     background-color: blue;
-  }
-  
-  .choices button {
+} */
+
+.choices button {
     display: block;
-  }
-  
-  /* the intials section style*/
-  input[type="text"] {
+}
+
+/* the intials section style*/
+input[type="text"] {
     font-size: 100%;
-  }
-  
-  ol {
+}
+
+ol {
     padding-left: 0px;
     max-height: 400px;
     overflow: auto;
-  }
-  
-  li {
+}
+
+li {
     padding: 5px;
     list-style: square;
-  }
+}
 
-  #question-title {
+#question-title {
     margin-bottom: 50px;
-  }
-  
-  /* this is used for the loading animations */
-  .skeleton {
-    animation: loading 1s infinite alternate; 
-  }
+}
 
-  /* this is the skeleton for the lyrics */
-  .skeleton-lyric {
+/* this is used for the loading animations */
+.skeleton {
+    animation: loading 1s infinite alternate;
+}
+
+/* this is the skeleton for the lyrics */
+.skeleton-lyric {
     width: 100%;
     height: 35px;
     display: block;
     border-radius: 10px;
     margin-bottom: -70px;
     align-items: center;
-  }
-  
-  /* this is makes it so every other lyric is 75% */
-  .skeleton-lyric:nth-child(even) {
-    width: 75%;
-  }
+}
 
-  /* this is the skeleton for the buttons */
-  .skeleton-button {
+/* this is makes it so every other lyric is 75% */
+.skeleton-lyric:nth-child(even) {
+    width: 75%;
+}
+
+/* this is the skeleton for the buttons */
+.skeleton-button {
     width: 50%;
     height: 35px;
     display: block;
     border-radius: 5px;
     margin-bottom: 10px;
-  }
+}
 
-  /* the animations for the loading */
-  @keyframes loading {
+/* the animations for the loading */
+@keyframes loading {
     0% {
-      background-color: lightgray;
+        background-color: lightgray;
     }
 
     100% {
-      background-color: gray;
+        background-color: gray;
     }
-    
-  }
+}
 
-  /* shrinks the select box to make it fit in a row */
-  #quiz-length {
+/* shrinks the select box to make it fit in a row */
+#quiz-length {
     width: 25%;
-  }
+}
 
-  /* this is the progress bar */
-  #quiz-progress {
+/* this is the progress bar */
+#quiz-progress {
     margin-top: 20px;
     margin-bottom: -35px;
-  }
+}
 
-  #initial-form {
+#initial-form {
     margin-bottom: 30px;
-  }
+}
 
-  #answers-list {
+#answers-list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-  }
-
+}
