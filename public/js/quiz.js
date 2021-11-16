@@ -17,9 +17,18 @@ var generatedResults = [];
 var answer = "";
 
 const theme = new Audio("./sounds/theme.mp3");
-// C:\Users\Tim\Documents\Bootcamp\Project-2-MUSICTRIVIA\Assets\sounds\theme.mp3
-// default length of 3
-var quizLength = 3;
+// default length of 5
+var quizLength = 5;
+
+function playTheme() {
+    theme.play();
+    theme.volume = 0.25;
+}
+
+function stopTheme() {
+    theme.pause();
+    theme.currentTime = 0;
+}
 
 function artistResults(json) {
     console.log(json);
@@ -162,7 +171,7 @@ function generateQuestions(lyric) {
         var choice = generatedResults[i].trackName;
         var answerButton = document.createElement("button");
         answerButton.setAttribute("class", "choice");
-        answerButton.classList.add("btn", "btn-primary");
+        answerButton.classList.add("btn", "btn-outline-primary");
         answerButton.setAttribute("value", choice);
         answerButton.textContent = i + 1 + ". " + choice;
         answerButton.addEventListener("click", questionClick);
@@ -175,24 +184,13 @@ function randomize(length) {
     return Math.floor(Math.random() * (length - 1));
 }
 
-function playTheme() {
-  theme.play();
-  theme.volume = 0.25;
-}
-
-function stopTheme() {
-  theme.pause();
-  theme.currentTime = 0;
-}
-
 // quiz variables
 var currentQuestionIndex = 0;
 var finalScore = 0;
 
 function startQuiz(e) {
-
-  e.preventDefault();
-  playTheme();
+    e.preventDefault();
+    playTheme();
 
     quizLength = quizLengthEl.value;
     // hides the start screen
@@ -202,36 +200,6 @@ function startQuiz(e) {
     // reveals the questions
     questionsEl.classList.remove("hide");
 
-
-function questionClick() {
-  // check if answer is correct
-  if (this.value !== answer) {
-    feedbackEl.textContent = "Incorrect";
-  }
-  else {
-    feedbackEl.textContent = "Correct";
-    finalScore++;
-  }
-
-  quizAnswers.push(answer)
-
-  // feedback on if the answer was right or wrong
-  feedbackEl.setAttribute("class", "feedback");
-  setTimeout(function () {
-    feedbackEl.setAttribute("class", "feedback hide");
-  }, 2000);
-
-  currentQuestionIndex++;
-
-  let progress = (currentQuestionIndex / quizLength).toFixed(2) * 100;
-  quizProgressBarEl.style.width = progress + "%";
-  quizProgressBarEl.setAttribute("aria-valuenow", progress)
-
-  // end after last question else move to next question
-  if (currentQuestionIndex >= quizLength) {
-    quizEnd();
-    stopTheme();
-  } else {
     getArtist();
 }
 
@@ -261,6 +229,7 @@ function questionClick() {
     // end after last question else move to next question
     if (currentQuestionIndex >= quizLength) {
         quizEnd();
+        stopTheme();
     } else {
         getArtist();
     }
@@ -278,9 +247,10 @@ async function quizEnd() {
     endScreenEl.classList.remove("hide");
 
     var finalScoreEl = document.getElementById("final-score");
-    const points = (finalScore / quizLength).toFixed(2) * 100 + "%";
+    const points = (finalScore / quizLength).toFixed(2);
 
-    finalScoreEl.textContent = points;
+    finalScoreEl.textContent = points * 100 + "%";
+
     console.log(quizAnswers);
 
     // * Push scores to leaderboard
@@ -300,29 +270,6 @@ async function quizEnd() {
         var quizAnswer = quizAnswers[i];
         var videoId = await searchtest(quizAnswer);
 
-        // console.log(videoId);
-
-        // var addEle = document.createElement("p");
-        // var linkEl = document.createElement("a");
-        // if (videoId === "") {
-        //     linkEl.href =
-        //         "https://www.youtube.com/results?search_query=" +
-        //         quizAnswer.replace(" ", "+");
-        // } else {
-        //     linkEl.href = "https://www.youtube.com/watch/" + videoId;
-        // }
-
-        // linkEl.target = "_blank";
-
-        // var imageEl = document.createElement("img");
-        // imageEl.src =
-        //     "https://img.youtube.com/vi/" + videoId + "/hqdefault.jpg";
-        // imageEl.width = 480;
-        // imageEl.height = 360;
-
-        // var pEl = document.createElement("p");
-        // pEl.textContent = quizAnswer;
-
         fetch("music-trivia-api/songs", {
             method: "POST",
             headers: {
@@ -340,10 +287,6 @@ async function quizEnd() {
             .catch((error) => {
                 console.error("Error:", error);
             });
-
-        // linkEl.append(imageEl, pEl);
-        // addEle.append(linkEl);
-        // answerslist.prepend(addEle);
     }
 }
 
@@ -364,35 +307,6 @@ function searchtest(quizAnswer) {
             }
         });
 }
-
-// function saveHighscore(e) {
-//     e.preventDefault();
-
-//     // get initials
-//     var initials = initialsEl.value.trim();
-
-//     if (initials !== "") {
-//         // get from localstorage or set to nothing
-//         var highscores =
-//             JSON.parse(window.localStorage.getItem("highscores")) || [];
-
-//         // format the new score
-//         var newScore = {
-//             score: (finalScore / quizLength).toFixed(2) * 100 + "%",
-//             initials: initials,
-//         };
-
-//         // save to localstorage
-//         highscores.push(newScore);
-//         window.localStorage.setItem("highscores", JSON.stringify(highscores));
-
-//         // got to highscores page
-//         window.location.href = "HighscorePage.html";
-//     }
-// }
-
-// submit initials
-// submitBtn.addEventListener("click", saveHighscore);
 
 // start quiz
 if (startBtn != null) {
