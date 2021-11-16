@@ -68,7 +68,7 @@ body {
 }
 
 /* button settings */
-button {
+/* button {
     display: inline-block;
     margin: 5px;
     cursor: pointer;
@@ -77,7 +77,7 @@ button {
     border-radius: 5px;
     padding: 3px 15px;
     color: white;
-}
+} */
 
 /* button:hover {
     background-color: blue;
@@ -85,6 +85,7 @@ button {
 
 .choices button {
     display: block;
+    margin-bottom: 10px;
 }
 
 /* the intials section style*/
@@ -118,7 +119,7 @@ li {
     height: 35px;
     display: block;
     border-radius: 10px;
-    margin-bottom: -70px;
+    margin-bottom: -50px;
     align-items: center;
 }
 
@@ -154,7 +155,7 @@ li {
 
 /* this is the progress bar */
 #quiz-progress {
-    margin-top: 20px;
+    margin-right: -3px;
     margin-bottom: -35px;
 }
 
@@ -167,4 +168,8 @@ li {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+}
+
+.card {
+    border-color: transparent !important;
 }

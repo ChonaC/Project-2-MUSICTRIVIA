@@ -2,15 +2,21 @@
     <div id="start-screen" class="start">
         <p>Guess the name of each song.</p>
         <form>
-            <div class="form-row align-items-center justify-content-center">
-                <select class="custom-select" id="quiz-length">
+            <div class="input-group">
+                <select class="form-select" id="quiz-length">
                     <option selected value="3">3 Songs</option>
                     <option value="5">5 Songs</option>
                     <option value="10">10 Songs</option>
                 </select>
-                <button type="submit" id="start" class="btn btn-primary">Start
-                    Quiz</button>
+                <button
+                    type="submit"
+                    id="start"
+                    class="btn btn-outline-primary"
+                >Start Quiz
+                </button>
+
             </div>
+
         </form>
     </div>
     <!-- hidden when first loaded -->
@@ -34,6 +40,9 @@
 <div id="end-screen" class="hide text-center">
     <h2>All done!</h2>
     <p>Your final score is <span id="final-score"></span>.</p>
+    <a class="btn btn-outline-primary" href="/">Play Again</a>
+    <a class="btn btn-outline-primary" href="/songs">My Songs</a>
+    <a class="btn btn-outline-primary" href="/scores">Leaderboard</a>
     {{! <ul id="answers-list"></ul> }}
 
 </div>

@@ -171,7 +171,7 @@ function generateQuestions(lyric) {
         var choice = generatedResults[i].trackName;
         var answerButton = document.createElement("button");
         answerButton.setAttribute("class", "choice");
-        answerButton.classList.add("btn", "btn-primary");
+        answerButton.classList.add("btn", "btn-outline-primary");
         answerButton.setAttribute("value", choice);
         answerButton.textContent = i + 1 + ". " + choice;
         answerButton.addEventListener("click", questionClick);
