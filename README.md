@@ -1,4 +1,4 @@
-# Project 2: Music Trivia 2.0 🎼
+# Project 2: Music Trivia 2.0 
 
 ## Group Contributors/Roles: 
 * Bryson Cole: Make MySQL database and use Sequelize. Make Get and Post routes.

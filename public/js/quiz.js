@@ -23,7 +23,7 @@ var answer = "";
 
 // default length of 3
 var quizLength = 3;
-
+console.log(submitBtn, startBtn)
 function artistResults(json) {
   console.log(json);
   var titleEl = document.getElementById("question-title");
