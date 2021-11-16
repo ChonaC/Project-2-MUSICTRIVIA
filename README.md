@@ -9,7 +9,7 @@
 
 * Taylor Paddock: CSS and Handlebars.
 
-* Tim Renken: Fine and implement extra library, package, or technology.
+* Tim Renken: Find and implement extra library, package, or technology.
 
 * Chona Castillo: GitHub management & organization. README & presentation slide. 
 
