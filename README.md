@@ -58,6 +58,29 @@
     -   You will see a `Project-2-MUSICTRIVIA` folder.
 -   An alternate document to clone a repo can also be found at [github][github-link]
 
+
+## Usage
+
+-   Our application can be viewed here: [Link to Deployed Application][deployed-link]
+
+Login
+![login screenshot](./public/images/login-screen.jpg)
+
+Sign Up
+![signup screenshot](./public/images/signup-screen.jpg)
+
+Quiz Homepage
+![quiz homepage screenshot](./public/images/homepage.jpg)
+
+Quiz Question
+![quiz question screenshot](./public/images/quiz-question.jpg)
+
+End of Quiz
+![quiz question screenshot](./public/images/quiz-question.jpg)
+
+Leaderboard
+![leaderboard screenshot](./public/images/leaderboard.jpg)
+
 ## License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
