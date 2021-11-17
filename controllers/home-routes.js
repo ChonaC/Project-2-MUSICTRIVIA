@@ -13,7 +13,7 @@ router.get("/", withAuth, async (req, res) => {
 
         const user = userData.get({ plain: true });
 
-        res.render('quiz', {
+        res.render("quiz", {
             ...user,
             logged_in: true,
         });
@@ -32,8 +32,16 @@ router.get("/login", (req, res) => {
     res.render("login");
 });
 
+router.get("/signup", (req, res) => {
+    if (req.session.logged_in) {
+        res.redirect("/");
+        return;
+    }
+
+    res.render("signup");
+});
+
 // * Leaderboard page
-// TODO: add auth when login works
 router.get("/scores", async (req, res) => {
     try {
         const scoreData = await Score.findAll({
@@ -46,6 +54,7 @@ router.get("/scores", async (req, res) => {
 
         res.render("scores", {
             scores,
+            logged_in: req.session.logged_in,
         });
     } catch (err) {
         res.status(500).json(err);
@@ -53,19 +62,18 @@ router.get("/scores", async (req, res) => {
 });
 
 // * Songs page
-// TODO: add auth when login works and where user_id == session
-router.get("/songs", async (req, res) => {
+router.get("/songs", withAuth, async (req, res) => {
     try {
         const songData = await Song.findAll({
-            // ! Add when finish testing
-            // where: {
-            //     user_id: req.session.user_id,
-            // },
+            where: {
+                user_id: req.session.user_id,
+            },
         });
         const songs = songData.map((song) => song.get({ plain: true }));
 
         res.render("songs", {
             songs,
+            logged_in: req.session.logged_in,
         });
     } catch (err) {
         res.status(500).json(err);

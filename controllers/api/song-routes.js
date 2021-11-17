@@ -34,13 +34,15 @@ router.get("/:id", async (req, res) => {
 //activity 5
 router.post("/", async (req, res) => {
     // create a new category
-    Song.create(req.body)
-        .then((newSong) => {
-            res.json(newSong);
-        })
-        .catch((err) => {
-            res.json(err);
+    try {
+        const newSong = await Song.create({
+            ...req.body,
+            user_id: req.session.user_id,
         });
+        res.status(200).json(newSong);
+    } catch (err) {
+        res.status(400).json(err);
+    }
 });
 
 //activity 7

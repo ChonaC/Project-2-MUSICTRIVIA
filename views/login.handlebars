@@ -1,5 +1,4 @@
-
-  <div class="col-md-6">
+{{! <div class="col-md-6">
     <h2>Login</h2>
 
     <form class="form login-form">
@@ -21,7 +20,7 @@
 
     <form class="form signup-form">
       <div class="form-group">
-        <label for="name-signup">name:</label>
+        <label for="name-signup">Username:</label>
         <input class="form-input" type="text" id="name-signup" />
       </div>
       <div class="form-group">
@@ -40,3 +39,35 @@
 </div>
 
 <script src="./js/login.js"></script>
+
+/// }}
+<section class="card m-4">
+    <h2 class="card-header text-center">
+        Login
+    </h2>
+    <div class="card-body">
+        <form class="login-form">
+            <div class="m-3">
+                <label for="email-login" class="form-label">Email:</label>
+                <input class="form-control" type="=text" id="email-login" />
+            </div>
+            <div class="m-3">
+                <label for="password-login" class="form-label">Password:</label>
+                <input
+                    class="form-control"
+                    type="password"
+                    id="password-login"
+                />
+            </div>
+            <div class="m-3">
+                <button class="btn btn-outline-primary" type="submit">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Login
+                </button>
+                <a href="/signup" class="ms-3">Sign up instead</a>
+            </div>
+        </form>
+    </div>
+</section>
+
+<script src="/js/login.js"></script>
