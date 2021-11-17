@@ -62,22 +62,22 @@
 
 -   Our application can be viewed here: [Link to Deployed Application][deployed-link]
 
--   Login
+Login
 ![login screenshot](./public/images/login-screen.jpg)
 
--   Sign Up
+Sign Up
 ![signup screenshot](./public/images/signup-screen.jpg)
 
--   Quiz Homepage
+Quiz Homepage
 ![quiz homepage screenshot](./public/images/homepage.jpg)
 
--   Quiz Question
+Quiz Question
 ![quiz question screenshot](./public/images/quiz-question.jpg)
 
--   End of Quiz
+End of Quiz
 ![quiz question screenshot](./public/images/quiz-question.jpg)
 
--   Leaderboard
+Leaderboard
 ![leaderboard screenshot](./public/images/leaderboard.jpg)
 
 ## License
