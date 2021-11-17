@@ -76,7 +76,7 @@ Quiz Question
 ![quiz question screenshot](./public/images/quiz-question.jpg)
 
 End of Quiz
-![quiz question screenshot](./public/images/quiz-question.jpg)
+![quiz question screenshot](./public/images/end-of-quiz-screen.jpg)
 
 Leaderboard
 ![leaderboard screenshot](./public/images/leaderboard.jpg)
