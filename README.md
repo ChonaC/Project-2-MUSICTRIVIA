@@ -58,6 +58,7 @@
     -   You will see a `Project-2-MUSICTRIVIA` folder.
 -   An alternate document to clone a repo can also be found at [github][github-link]
 
+
 ## Usage
 
 -   Our application can be viewed here: [Link to Deployed Application][deployed-link]
